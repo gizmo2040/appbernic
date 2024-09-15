@@ -29,7 +29,7 @@ def check():
 	with open("/dev/input/event1", "rb") as f:
 		while True:
 			event = f.read(24)
-			
+
 			if event:
 				(tv_sec, tv_usec, type, kcode, kvalue) = struct.unpack('llHHI', event)
 				if kvalue != 0:
